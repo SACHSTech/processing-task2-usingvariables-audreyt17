@@ -1,16 +1,21 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
+
+
 	/**
   * Description: 
-  * Write a prgram that creates a drawing using processing     variables variables like width and height to make a         drawing that is dynamic to changes in size
+  * Write a prgram that creates a drawing using processing variables variables like width and height to make drawing that is dynamic to changes in size
   * @author: Tao A
   */
   
+  /**
+   * Called once at the beginning of execution, put your size all in this method
+   */
   public void settings() {
 	// put your size call here
-    size(200, 250);
+    int dimension = Math.min(this.displayHeight, this.displayWidth);
+    size(dimension, dimension);
   }
 
   /** 
@@ -18,52 +23,70 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(131, 174, 242);
+    background(161, 185, 207);
   }
 
   /**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-	  
-	//foreground settings
-    stroke(0,0,0);
-    strokeWeight(1);
-    fill(126, 189, 125);
-    rect((float) (width/-20), (float) (height/1.06), (float) (width/0.9), (height));
 
-  //draw the head
-    fill(255, 249, 128);
-    ellipse(100, 128, 90, 90);
-
-  //white part of eyes
-    fill(255);
-
-  //draw the eyes
-    ellipse(79, 120, 25, 20);
-    ellipse(120, 120, 25, 20);
-
-  //black part of the pupils
-    fill(8, 10, 10);
-
-  //draw the pupils
-    ellipse(79, 120, 7, 7);
-    ellipse(120, 120, 7, 7);
-
-  //colour of the mouth
-    fill(227, 67, 50);
-
-  //draw the mouth
-    arc(100, 140, 60, 43, 0, 311/99);
-
-  //lines for body
-    stroke(0, 0, 0);
-    strokeWeight(2);
-    line(100, 210, 100, 175);
-    line(130, 190, 70, 190);
-    line(120, 230, 100, 210);
-    line(100, 210, 80, 230);
+    int dimension = Math.min(this.displayHeight, this.displayWidth);
     
+    float flowerX = 300 * dimension / 400;
+    float flowerY = 270 * dimension / 400;
+    float petalSize = 50 * dimension / 400;
+    float petalDistance = petalSize / 2;
+
+    fill(195, 149, 199);
+
+// upper-left petal
+    ellipse(flowerX - petalDistance, flowerY - petalDistance,
+        petalSize, petalSize);
+
+// upper-right petal
+    ellipse(flowerX + petalDistance, flowerY - petalDistance,
+        petalSize, petalSize);
+
+// lower-left petal
+    ellipse(flowerX - petalDistance, flowerY + petalDistance,
+        petalSize, petalSize);
+
+// lower-right petal
+    ellipse(flowerX + petalDistance, flowerY + petalDistance,
+        petalSize, petalSize);
+
+// center petal
+    fill(248, 252, 131);
+    ellipse(flowerX, flowerY,
+        petalSize, petalSize);
+
+// flower stem
+    stroke(128);
+    strokeWeight(3/2);
+    line(300 * dimension / 400, dimension,
+         300 * dimension / 400, 305 * dimension / 400);
+
+// rectangle of the house
+    fill(189, 154, 102);
+    rect(50 * dimension / 400, 149 * dimension / 400,
+         180 * dimension / 400, 250 * dimension / 400);
+    
+// door of the house
+    fill(135, 108, 68);
+    rect(95 * dimension / 400, 270 * dimension / 400,
+         90 * dimension / 400, 270 * dimension / 400);
+    
+// roof of the house
+    fill(135, 108, 68);
+    triangle(50 * dimension / 400, 150 * dimension / 400,
+             135 * dimension / 400, 60 * dimension / 400,
+             230 * dimension / 400, 150 * dimension / 400);
+    
+// grass
+    fill(97, 173, 97);
+    rect(0, 365 * dimension /400,
+         dimension, 35 * dimension / 400);
   }
   
   // define other methods down here.
