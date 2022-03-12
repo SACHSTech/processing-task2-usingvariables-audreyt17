@@ -5,16 +5,17 @@ public class Sketch extends PApplet {
 
 	/**
   * Description: 
-  * Write a prgram that creates a drawing using processing variables variables like width and height to make drawing that is dynamic to changes in size
+  * Write a program that creates a drawing using processing variables variables like width and height to make drawing that is dynamic to changes in size
   * @author: Tao A
   */
+
+  int dimension = 500;  // set this for a global dimension value >= 100
   
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
   public void settings() {
 	// put your size call here
-    int dimension = Math.min(this.displayHeight, this.displayWidth);
     size(dimension, dimension);
   }
 
@@ -30,8 +31,6 @@ public class Sketch extends PApplet {
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-
-    int dimension = Math.min(this.displayHeight, this.displayWidth);
     
     float flowerX = 300 * dimension / 400;
     float flowerY = 270 * dimension / 400;
@@ -75,7 +74,7 @@ public class Sketch extends PApplet {
 // door of the house
     fill(135, 108, 68);
     rect(95 * dimension / 400, 270 * dimension / 400,
-         90 * dimension / 400, 270 * dimension / 400);
+         90 * dimension / 400, 125 * dimension / 400);
     
 // roof of the house
     fill(135, 108, 68);
