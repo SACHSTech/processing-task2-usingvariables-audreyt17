@@ -2,13 +2,15 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
+	/**
+  * Description: 
+  * Write a prgram that creates a drawing using processing     variables variables like width and height to make a         drawing that is dynamic to changes in size
+  * @author: Tao A
+  */
+  
   public void settings() {
 	// put your size call here
-    size(400, 400);
+    size(200, 250);
   }
 
   /** 
@@ -16,7 +18,7 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(210, 255, 173);
+    background(131, 174, 242);
   }
 
   /**
@@ -24,12 +26,44 @@ public class Sketch extends PApplet {
    */
   public void draw() {
 	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
+	//foreground settings
+    stroke(0,0,0);
+    strokeWeight(1);
+    fill(126, 189, 125);
+    rect((float) (width/-20), (float) (height/1.06), (float) (width/0.9), (height));
 
-    stroke(255);
-    line(50, 125, 70, 50);  
+  //draw the head
+    fill(255, 249, 128);
+    ellipse(100, 128, 90, 90);
+
+  //white part of eyes
+    fill(255);
+
+  //draw the eyes
+    ellipse(79, 120, 25, 20);
+    ellipse(120, 120, 25, 20);
+
+  //black part of the pupils
+    fill(8, 10, 10);
+
+  //draw the pupils
+    ellipse(79, 120, 7, 7);
+    ellipse(120, 120, 7, 7);
+
+  //colour of the mouth
+    fill(227, 67, 50);
+
+  //draw the mouth
+    arc(100, 140, 60, 43, 0, 311/99);
+
+  //lines for body
+    stroke(0, 0, 0);
+    strokeWeight(2);
+    line(100, 210, 100, 175);
+    line(130, 190, 70, 190);
+    line(120, 230, 100, 210);
+    line(100, 210, 80, 230);
+    
   }
   
   // define other methods down here.
