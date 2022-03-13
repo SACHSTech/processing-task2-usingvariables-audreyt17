@@ -5,7 +5,7 @@ public class Sketch extends PApplet {
 
 	/**
   * Description: 
-  * Write a program that creates a drawing using processing variables variables like width and height to make drawing that is dynamic to changes in size
+  * Write a program that creates a drawing using processing variables like width and height to make a drawing that is dynamic to changes in size
   * @author: Tao A
   */
 
